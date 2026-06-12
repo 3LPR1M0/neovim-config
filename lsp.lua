@@ -56,9 +56,7 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls",   -- Lua
-                "pyright",  -- Python
-                "clangd",   -- C / C++
+
             },
             handlers = {
                 -- Fallback for anything not explicitly handled below
