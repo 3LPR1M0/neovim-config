@@ -56,7 +56,6 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-
             },
             handlers = {
                 -- Fallback for anything not explicitly handled below
@@ -66,6 +65,21 @@ return {
                     }
                 end,
 
+		["nixd"] = function()
+            require("lspconfig").nixd.setup {
+                capabilities = capabilities,
+                settings = {
+                    nixd = {
+                        nixpkgs = {
+                            expr = "import <nixpkgs> { }",
+                        },
+                        formatting = {
+                            command = { "nixpkgs-fmt" }, 
+                        },
+                    },
+                },
+            }
+        end,
                 ["lua_ls"] = function()
                     require("lspconfig").lua_ls.setup {
                         capabilities = capabilities,
