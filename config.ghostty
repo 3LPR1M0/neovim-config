@@ -1,0 +1,7 @@
+foreground = ffffff 
+font-size = 11
+confirm-close-surface = false 
+window-decoration = false
+background-opacity = 1
+custom-shader-animation = always
+custom-shader = ~/.config/ghostty/shaders/cursor_sweep.glsl
